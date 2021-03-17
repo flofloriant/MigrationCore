@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountBlocked" xml:space="preserve">
+    <value>Votre compte a été bloqué après 3 mauvais mots de passe, temps restant : #1 minutes</value>
+  </data>
+  <data name="Alpha" xml:space="preserve">
+    <value>Par ordre alphabétique</value>
+  </data>
+  <data name="AnnualSalary" xml:space="preserve">
+    <value>Veuillez entre votre salaire annuel svp</value>
+  </data>
+  <data name="Archive" xml:space="preserve">
+    <value>Archiver</value>
+  </data>
+  <data name="BusinessInvalid" xml:space="preserve">
+    <value>Commercial n'existe pas pour l'agence selectionné</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Certifications" xml:space="preserve">
+    <value>Certifications</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Modifier le mot de passe</value>
+  </data>
+  <data name="Charge100" xml:space="preserve">
+    <value>Disponible 100%</value>
+  </data>
+  <data name="CoefficientsInvalid" xml:space="preserve">
+    <value>Coefficient  n'existe pas pour le niveau selectionné</value>
+  </data>
+  <data name="CollabForm" xml:space="preserve">
+    <value>Formations</value>
+  </data>
+  <data name="CollabInfo" xml:space="preserve">
+    <value>Informations de contact</value>
+  </data>
+  <data name="CollabManag" xml:space="preserve">
+    <value>Gestion collaborateur</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="CollabMonit" xml:space="preserve">
+    <value>Suivi des formations</value>
+  </data>
+  <data name="Collaborator" xml:space="preserve">
+    <value>Collaborateur</value>
+  </data>
+  <data name="Collaborater" xml:space="preserve">
+    <value>Collaborateur</value>
+  </data>
+  <data name="CollaboraterEdit" xml:space="preserve">
+    <value>Listes  des collaborateurs</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirmer</value>
+  </data>
+  <data name="Copied" xml:space="preserve">
+    <value>Copié</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copier</value>
+  </data>
+  <data name="ContractInvalid" xml:space="preserve">
+    <value>Contrat n'existe pas pour l'agence selectionné</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Déconnexion</value>
+  </data>
+  <data name="DispCollab" xml:space="preserve">
+    <value>Display</value>
+  </data>
+  <data name="Display" xml:space="preserve">
+    <value>Affichage</value>
+  </data>
+  <data name="Dispo" xml:space="preserve">
+    <value>Disponible</value>
+  </data>
+  <data name="Dispo3mois" xml:space="preserve">
+    <value>Fin de mission dans 3 mois ou moins</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Votre adresse email :</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editer</value>
+  </data>
+  <data name="EmailInvalide" xml:space="preserve">
+    <value>Veuillez entrer un email valide</value>
+  </data>
+  <data name="EmailSent" xml:space="preserve">
+    <value>Un email a été envoyé à l’adresse</value>
+  </data>
+  <data name="ErrorsLeft" xml:space="preserve">
+    <value>#1 tentative(s) restante(s)</value>
+  </data>
+  <data name="Experiences" xml:space="preserve">
+    <value>Expériences</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Exporter</value>
+  </data>
+  <data name="ExportModal" xml:space="preserve">
+    <value>Sélectionner les informations que vous souhaitez exporter ainsi que le format de fichier :</value>
+  </data>
+  <data name="FalseOldPassword" xml:space="preserve">
+    <value>Ancien mot de passe incorrect, veuillez réessayer</value>
+  </data>
+  <data name="EmailWorkInvalide" xml:space="preserve">
+    <value>Veuillez entrer un email de travail  valide</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filtres</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Terminer</value>
+  </data>
+  <data name="FonctionCompetences" xml:space="preserve">
+    <value>Compétences fonctionnelles</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Mot de passe oublié</value>
+  </data>
+  <data name="ForgotPasswordParagraph" xml:space="preserve">
+    <value>Vous avez envoyé une demande de réinitialisation de mot de passe. 
+Vous trouverez alors ci-dessous un mot de passe temporaire qui n'est valide que pendant une heure à compter de la demande de réinitialisation.
+Vous devrez ensuite le modifier après votre connexion.</value>
+  </data>
+  <data name="Formations" xml:space="preserve">
+    <value>Formations</value>
+  </data>
+  <data name="Formation" xml:space="preserve">
+    <value>Formations</value>
+  </data>
+  <data name="GradeInvalid" xml:space="preserve">
+    <value>Niveau n'existe pas pour l'agence selectionné</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Importer</value>
+  </data>
+  <data name="IncorrectPsw" xml:space="preserve">
+    <value>Echec de connexion : mot de passe incorrect !</value>
+  </data>
+  <data name="Indispo" xml:space="preserve">
+    <value>Indisponible en mission longue durée</value>
+  </data>
+  <data name="InexistUser" xml:space="preserve">
+    <value>Echec de connexion : identifiant inexistant !</value>
+  </data>
+  <data name="Initials" xml:space="preserve">
+    <value>Initiales</value>
+  </data>
+  <data name="Instructions" xml:space="preserve">
+    <value>Suivez les instructions fournies pour réinitialiser votre mot de passe.</value>
+  </data>
+  <data name="InvalidCerdentials" xml:space="preserve">
+    <value>Adresse email ou mot de passe incorrect</value>
+  </data>
+  <data name="Languages" xml:space="preserve">
+    <value>Langues</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Langues</value>
+  </data>
+  <data name="LanguageLevel1" xml:space="preserve">
+    <value>Notions élémentaires</value>
+  </data>
+  <data name="LanguageLevel2" xml:space="preserve">
+    <value>Compétences professionnelle limitée</value>
+  </data>
+  <data name="LanguageLevel3" xml:space="preserve">
+    <value>Compétences professionnelle</value>
+  </data>
+  <data name="LanguageLevel4" xml:space="preserve">
+    <value>Compétences professionnelle complète</value>
+  </data>
+  <data name="LanguageLevel5" xml:space="preserve">
+    <value>Bilingue ou langue natale</value>
+  </data>
+  <data name="LastAdded" xml:space="preserve">
+    <value>Derniers ajouts</value>
+  </data>
+  <data name="Level1" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="Level2" xml:space="preserve">
+    <value>**</value>
+  </data>
+  <data name="Level3" xml:space="preserve">
+    <value>***</value>
+  </data>
+  <data name="Level4" xml:space="preserve">
+    <value>****</value>
+  </data>
+  <data name="Level5" xml:space="preserve">
+    <value>*****</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Se connecter</value>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>Connexion échouée</value>
+  </data>
+  <data name="NameFirstname" xml:space="preserve">
+    <value>Nom Prénom</value>
+  </data>
+  <data name="NeedToResetPassword" xml:space="preserve">
+    <value>Votre mot de passe temporaire a expiré, vous devez le réinitialiser</value>
+  </data>
+  <data name="MandatoryInput" xml:space="preserve">
+    <value>Saisie obligatoire</value>
+  </data>
+  <data name="MatriculeInvalid" xml:space="preserve">
+    <value>Le numéro de matricule existe déjà</value>
+  </data>
+  <data name="MonthlyPayInvalid" xml:space="preserve">
+    <value>Veuillez entrer un salaire mensuel valide</value>
+  </data>
+  <data name="NewCollab" xml:space="preserve">
+    <value>Nouveau collaborateur</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Mot de passe temporaire :</value>
+  </data>
+  <data name="NoResults" xml:space="preserve">
+    <value>Pas de résultats</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Ordre</value>
+  </data>
+  <data name="OtherAgency" xml:space="preserve">
+    <value>Autre agences</value>
+  </data>
+  <data name="PartTime" xml:space="preserve">
+    <value>Temps partiel</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="Pdf" xml:space="preserve">
+    <value>Pdf</value>
+  </data>
+  <data name="PlsDate_embauche" xml:space="preserve">
+    <value>Veuillez entrer la date d'embauche svp</value>
+  </data>
+  <data name="PlsDate_naissance" xml:space="preserve">
+    <value>Veuillez entrer la date de naissance svp</value>
+  </data>
+  <data name="PlsEmail" xml:space="preserve">
+    <value>Veuillez entrer votre adresse email</value>
+  </data>
+  <data name="PlsPassword" xml:space="preserve">
+    <value>Veuillez entrer votre mot de passe</value>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>Poste</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="RegistrationNumberInvalide" xml:space="preserve">
+    <value>Veuillez entrer un matricule numerique en longueur 4</value>
+  </data>
+  <data name="SearchCollab" xml:space="preserve">
+    <value>Recherche de collaborateur</value>
+  </data>
+  <data name="SearchCompet" xml:space="preserve">
+    <value>Recherche de compétences</value>
+  </data>
+  <data name="Statut2" xml:space="preserve">
+    <value>Disponible à partir du </value>
+  </data>
+  <data name="Statut3" xml:space="preserve">
+    <value>Indisponible jusqu'au</value>
+  </data>
+  <data name="StatutInvalid" xml:space="preserve">
+    <value>Le statut contrat n'existe pas pour l'agence selectionné</value>
+  </data>
+  <data name="TechnicalCompetences" xml:space="preserve">
+    <value>Compétences techniques</value>
+  </data>
+  <data name="Tel_fixe" xml:space="preserve">
+    <value>Tél. fixe :</value>
+  </data>
+  <data name="Tel_port" xml:space="preserve">
+    <value>Tél. port. :</value>
+  </data>
+  <data name="Tel_travail" xml:space="preserve">
+    <value>Tél.travail :</value>
+  </data>
+  <data name="TitleLevel" xml:space="preserve">
+    <value>Niveau</value>
+  </data>
+  <data name="TitleTechnic" xml:space="preserve">
+    <value>Technologie,environnement, outils</value>
+  </data>
+  <data name="TitrePerson" xml:space="preserve">
+    <value>Personne à contacter en cas d’urgence n° </value>
+  </data>
+  <data name="SeeProfiles" xml:space="preserve">
+    <value>Voir profil</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Tout sélectionner</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Bienvenue sur l'application</value>
+  </data>
+  <data name="WelcomeEmail" xml:space="preserve">
+    <value>Bienvenue sur Apogée</value>
+  </data>
+  <data name="WelcomeParagraph" xml:space="preserve">
+    <value>Votre compte sur l'application Apogée by Apside a été créé.
+Vous trouverez ci-dessous vos identifiants de connexion</value>
+  </data>
+  <data name="Word" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="Informations" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Skills" xml:space="preserve">
+    <value>Compétences</value>
+  </data>
+  <data name="Certification" xml:space="preserve">
+    <value>Certification</value>
+  </data>
+  <data name="ImportParagraph" xml:space="preserve">
+    <value>Pour importer un collaborateur vous devez impérativement avoir la dernière version du dossier de compétences.
+Il est possible que certaines informations ne soient pas récupérés si elles ne sont pas dans les styles adéquats dans le fichier, merci de vérifier après l'importation.
+Les compétences fonctionnelles ne sont pas importées, une saisie manuelle est requise.</value>
+  </data>
+  <data name="AlreadyArchived" xml:space="preserve">
+    <value>Collaborateur est déjà archivé</value>
+  </data>
+  <data name="AlreadyDelete" xml:space="preserve">
+    <value>Vous avez déjà supprimer la photo</value>
+  </data>
+  <data name="AlreadyUpload" xml:space="preserve">
+    <value>Vous avez déjà télécharger une photo</value>
+  </data>
+  <data name="ContactAlreadyDelete" xml:space="preserve">
+    <value>La personne à contacter est déjà supprimée !</value>
+  </data>
+  <data name="ContactDelete" xml:space="preserve">
+    <value>La personne à contacter a bien été supprimée</value>
+  </data>
+  <data name="DateContractRecorded" xml:space="preserve">
+    <value>Date de fin contrat est bien enregistré</value>
+  </data>
+  <data name="ErrorContratDate" xml:space="preserve">
+    <value>Date de fin contrat incorrecte</value>
+  </data>
+  <data name="ErrorDelete" xml:space="preserve">
+    <value>Problème avec  la suppression  photo</value>
+  </data>
+  <data name="ErrorTableContract" xml:space="preserve">
+    <value>Problème avec table collaborateur pendant mis à jour date fin contrat</value>
+  </data>
+  <data name="FileSaved" xml:space="preserve">
+    <value>Les fichiers sont bien été enregistrés</value>
+  </data>
+  <data name="FilesDelete" xml:space="preserve">
+    <value>Les fichiers sont bien été supprimés</value>
+  </data>
+  <data name="FilesModified" xml:space="preserve">
+    <value>Les fichiers sont bien été modifiés</value>
+  </data>
+  <data name="FileUpload" xml:space="preserve">
+    <value>Les fichiers doivent être télécharger</value>
+  </data>
+  <data name="NotifyAdmin" xml:space="preserve">
+    <value>Prévenez l'administrateur !!</value>
+  </data>
+  <data name="NotSufficient" xml:space="preserve">
+    <value>votre saisie n'est pas suffisante</value>
+  </data>
+  <data name="ProblemEmergency" xml:space="preserve">
+    <value>Problème avec le fichier Urgence !!!</value>
+  </data>
+  <data name="ProblemImport" xml:space="preserve">
+    <value>Problème avec l'importation photo</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>Raison de l'arrêt du programme : Problème à la</value>
+  </data>
+  <data name="Reason1" xml:space="preserve">
+    <value>création d'un nouveau collaborateur</value>
+  </data>
+  <data name="Reason2" xml:space="preserve">
+    <value>lecture d'un collaborateur</value>
+  </data>
+  <data name="SeriousError" xml:space="preserve">
+    <value>Programme s'est arrêté à cause d'une grave erreur !</value>
+  </data>
+  <data name="ContactEmergency" xml:space="preserve">
+    <value>Personne à contacter en cas d’urgence</value>
+  </data>
+  <data name="ContactEmergencyConfirm" xml:space="preserve">
+    <value>Voulez vous vraiment supprimer la personne à contacter ?</value>
+  </data>
+  <data name="ContactEmergencyCreat" xml:space="preserve">
+    <value>Création d’une personne à contacter</value>
+  </data>
+  <data name="ContactEmergencyModif" xml:space="preserve">
+    <value>Modification d’une personne à contacter</value>
+  </data>
+  <data name="ContactEmergencyRemove" xml:space="preserve">
+    <value>Suppression d’une personne à contacter</value>
+  </data>
+  <data name="DeletingPicture" xml:space="preserve">
+    <value>Suppression du photo de profil</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="Error1" xml:space="preserve">
+    <value>Une erreur s'est produite lors du traitement de votre demande.</value>
+  </data>
+  <data name="PictureCreation" xml:space="preserve">
+    <value>Creation du photo de profil</value>
+  </data>
+  <data name="Area1" xml:space="preserve">
+    <value>Banque</value>
+  </data>
+  <data name="Area2" xml:space="preserve">
+    <value>Assurance</value>
+  </data>
+  <data name="Area3" xml:space="preserve">
+    <value>Santé</value>
+  </data>
+  <data name="PosteCreat" xml:space="preserve">
+    <value>Création d’une expérience</value>
+  </data>
+  <data name="ProExperiences" xml:space="preserve">
+    <value>Expériences professionnelles</value>
+  </data>
+  <data name="Projet" xml:space="preserve">
+    <value>Projet(s)</value>
+  </data>
+  <data name="Area10" xml:space="preserve">
+    <value>Distribution</value>
+  </data>
+  <data name="Area11" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Area12" xml:space="preserve">
+    <value>Transport</value>
+  </data>
+  <data name="Area13" xml:space="preserve">
+    <value>Secteur public</value>
+  </data>
+  <data name="Area14" xml:space="preserve">
+    <value>Luxe</value>
+  </data>
+  <data name="Area15" xml:space="preserve">
+    <value>Autres</value>
+  </data>
+  <data name="Area4" xml:space="preserve">
+    <value>Pharmaceutique</value>
+  </data>
+  <data name="Area5" xml:space="preserve">
+    <value>Protection sociale</value>
+  </data>
+  <data name="Area6" xml:space="preserve">
+    <value>Industrie</value>
+  </data>
+  <data name="Area7" xml:space="preserve">
+    <value>Agroalimentaire</value>
+  </data>
+  <data name="Area8" xml:space="preserve">
+    <value>Automobile</value>
+  </data>
+  <data name="Area9" xml:space="preserve">
+    <value>Aéronautique / Spatial / Défense</value>
+  </data>
+  <data name="DateError" xml:space="preserve">
+    <value>Date obligatoire !!</value>
+  </data>
+  <data name="DateErrorC" xml:space="preserve">
+    <value>La date début ne peut pas être plus grand que la date de fin !!</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Informations personnelles du collaborateur</value>
+  </data>
+  <data name="InvalidAvail" xml:space="preserve">
+    <value>Disponibilité invalide !!</value>
+  </data>
+  <data name="ProblemPoste" xml:space="preserve">
+    <value>Problème avec le fichier Poste !!!</value>
+  </data>
+  <data name="PosteAlreadyDelete" xml:space="preserve">
+    <value>L'experiènce est déjà supprimée !</value>
+  </data>
+  <data name="PosteDelete" xml:space="preserve">
+    <value>L'experiènce a bien été supprimée</value>
+  </data>
+  <data name="PosteModif" xml:space="preserve">
+    <value>Modification d’une expérience</value>
+  </data>
+  <data name="PosteRemove" xml:space="preserve">
+    <value>Suppression d’une expérience</value>
+  </data>
+  <data name="PosteRemoveConfirm" xml:space="preserve">
+    <value>Voulez vous vraiment supprimer l'experiènce ?</value>
+  </data>
+</root>

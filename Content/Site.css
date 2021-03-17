@@ -1,0 +1,119 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+}
+
+.dispo {
+    background: lime;
+}
+.temps-partiel {
+    background: linear-gradient(45deg, lime 12.5%, orange 12.5%, orange 37.5%, lime 37.5%, lime 62.5%, orange 62.5%, orange 87.5%, lime 87.5%);
+}
+
+.dispo3 {
+    background: orange;
+}
+
+.indispo {
+    background: red;
+}
+
+.col {
+    padding: 0;
+}
+
+#col-container {
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    margin: 100px auto;
+}
+
+.col {
+    width: 22%;
+    border: solid grey 2px;
+    background: white;
+}
+
+.col:not(#colNom){
+    cursor: move;
+}
+
+.col .title,
+.colCheck .title {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* dashed */
+.col.over {
+    border: 2px dashed #000;
+}
+
+.col .title {
+    background: lightgrey;
+}
+/* Specific Columns */
+#col1 {
+    order: 1;
+    background-size: cover;
+}
+
+#col2 {
+    order: 2;
+    background-size: cover;
+}
+
+#col3 {
+    order: 3;
+    background-size: cover;
+}
+
+.collabPhoto {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+table {
+    width: 100%;
+    margin: 2em;
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+}
+
+#skill {
+    color: coral;
+    font-weight: bold;
+}
+
+caption {
+    caption-side: top;
+    padding: 15px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}

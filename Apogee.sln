@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apogee", "Apogee.csproj", "{AB19C9C4-3BD6-4EDB-A1D1-1628672FDE6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB19C9C4-3BD6-4EDB-A1D1-1628672FDE6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB19C9C4-3BD6-4EDB-A1D1-1628672FDE6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB19C9C4-3BD6-4EDB-A1D1-1628672FDE6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB19C9C4-3BD6-4EDB-A1D1-1628672FDE6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74FCF8F1-1340-4B85-9145-2935958E1BBF}
+	EndGlobalSection
+EndGlobal

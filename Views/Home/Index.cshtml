@@ -1,0 +1,44 @@
+﻿@*    INDEX DE HOME    *@
+@{
+    ViewBag.Title = "Home";
+}
+@using (Html.BeginForm("GeneralSearch", "Home"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="p-1 bg-light shadow-sm mb">
+                <div class="input-group rounded-pill">
+                    <div class="input-group-prepend">
+                        <button id="btn-addon" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>
+                    </div>
+                    <input id="generalSearch" name="query" autocomplete="off" type="search" placeholder="@Apogee.Resources.Resources.Search" aria-describedby="btn-addon" class="form-control border-0 bg-light">
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="content text-center">
+
+    <h1>
+        @Apogee.Resources.Resources.Welcome<br />
+        Apogée<br />
+        by Apside<br />
+    </h1>
+
+    <div class="row justify-content-center">
+        @Html.ActionLink(@Apogee.Resources.Resources.NewCollab, "NewCollab", null, new { @class = "btn btn-primary btn-lg font-weight-bold m-3" })
+        @Html.ActionLink(@Apogee.Resources.Resources.SearchCollab, "SearchCollab", null, new { @class = "btn btn-primary btn-lg font-weight-bold m-3" })
+    </div>
+    <div class="row justify-content-center">
+        @Html.ActionLink(@Apogee.Resources.Resources.CollabMonit, "CollabMonitSearch", null, new { @class = "btn btn-secondary btn-lg font-weight-bold m-3" })
+        @Html.ActionLink(@Apogee.Resources.Resources.SearchCompet, "SearchCompet", null, new { @class = "btn btn-secondary btn-lg font-weight-bold m-3" })
+    </div>
+
+    <div class="row justify-content-center">
+        @Html.ActionLink("Test création nouveau collaborateur", "AccessDb", null)
+    </div>
+
+</div>

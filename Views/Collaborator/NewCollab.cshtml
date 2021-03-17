@@ -1,0 +1,223 @@
+﻿@model Apogee.Models.Collaborateur
+@{
+    ViewBag.Title = "NewCollab";
+}
+<h2>
+    @Apogee.Resources.Resources.Collaborater<br />
+</h2>
+
+<nav>
+    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-infos-tab" data-toggle="tab" href="#nav-infos" role="tab" aria-controls="nav-infos" aria-selected="true">@Apogee.Resources.Resources.Informations</a>
+        <a class="nav-item nav-link" id="nav-comp-tab" data-toggle="tab" href="#nav-comp" role="tab" aria-controls="nav-comp" aria-selected="false">@Apogee.Resources.Resources.Skills</a>
+        <a class="nav-item nav-link" id="nav-exp-tab" data-toggle="tab" href="#nav-exp" role="tab" aria-controls="nav-exp" aria-selected="false">@Apogee.Resources.Resources.Experiences</a>
+    </div>
+</nav>
+
+<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+
+    <div class="tab-pane fade show active" id="nav-infos" role="tabpanel" aria-labelledby="nav-infos-tab">
+        @*<div>
+            @{
+                Html.RenderAction("PhotoView", Model);
+            }
+        </div>*@
+
+        @using (Html.BeginForm("EditCollab"))
+        {
+            @Html.AntiForgeryToken()
+            <span class="alert-danger">
+                @Html.ValidationSummary()
+            </span>
+            if (ViewBag.Message != null)
+            {
+                <span class="text-danger">@ViewBag.Message</span>
+            }
+
+            @*<div>
+                @{
+                    Html.RenderAction("ModifCollab", Model);
+                }
+            </div>*@
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    @Html.ActionLink(@Apogee.Resources.Resources.Import, "Index", "Home", null, new { @class = "btn btn-default font-weight-bold m-3" })
+                    <input id="btnConfirm" type="submit" value="@Apogee.Resources.Resources.Confirm" class="btn btn-primary  font-weight-bold m-3" />
+                    @Html.ActionLink(@Apogee.Resources.Resources.Cancel, "Index", "Home", null, new { @class = "btn btn-secondary  font-weight-bold m-3" })
+                </div>
+            </div>
+
+        }
+        <div class="form-row">
+            <div class="form-group col-md-6 font-weight-bold ">
+                @Apogee.Resources.Resources.ContactEmergency <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertUrgence">+</button>
+            </div>
+        </div>
+        @*<div>
+            @{
+                Html.RenderAction("ListUrgence", Model);
+            }
+        </div>*@
+
+       @* @{
+            Html.RenderAction("UpdateUrgenceView", Model);
+        }
+        @{
+            Html.RenderAction("DeleteUrgenceView", Model);
+        }
+        @{ Html.RenderAction("AddUrgenceModale", Model); }
+        @{ Html.RenderAction("PhotoViewDelete", Model); }*@
+
+    </div>
+
+    <div class="tab-pane fade" id="nav-comp" role="tabpanel" aria-labelledby="nav-comp-tab">
+        <style>
+            table {
+                width: 100%;
+                margin: 2em;
+                border-top: solid black 2px;
+                border-bottom: solid black 2px;
+            }
+
+            #skill {
+                color: coral;
+                font-weight: bold;
+            }
+
+            caption {
+                caption-side: top;
+                padding: 15px;
+                text-align: center;
+                font-size: 2em;
+                font-weight: bold;
+            }
+        </style>
+        <table>
+            <caption> Ajout de compétences</caption>
+            @*    1ERE LIGNE / LANGUE*@
+            <tr>
+                <td id="skill">Langue</td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLangue">
+                        Ajouter une langue
+                    </button>
+                </td>
+                <td>
+                   @* <div>
+                        @{
+                            Html.RenderAction("ListLangues", Model);
+                        }
+                    </div>*@
+                </td>
+            </tr>
+            @*    2EME LIGNE / FORMATION*@
+            <tr>
+                <td id="skill">Formations</td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalForm">
+                        Ajouter une formation
+                    </button>
+                </td>
+                <td>
+                    @*<div>
+                        @{
+                            Html.RenderAction("ListeEtudes", Model);
+                        }
+                    </div>*@
+
+                </td>
+            </tr>
+            @*    3EME LIGNE / COMP TECH*@
+            <tr>
+                <td id="skill">Compétences techniques</td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTech">
+                        Ajouter une compétence technique
+                    </button>
+                </td>
+                <td>
+                    @*<div>
+                        @{
+                            Html.RenderAction("ListeTechniques", Model);
+                        }
+                    </div>*@
+
+                </td>
+            </tr>
+            @*     4EME LIGNE / COMP FONCT*@
+            <tr>
+                <td id="skill">Compétences fonctionnelles</td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFonc">
+                        Ajouter une compétence fonctionnelle
+                    </button>
+                </td>
+                <td>
+                   @* <div>
+                        @{
+                            Html.RenderAction("ListeFonctionnelles", Model);
+                        }
+                    </div>*@
+                </td>
+            </tr>
+        </table>
+
+
+        @*--------------------------------- M O D I F I C A T I O N S   D E S    C O M P E T E N C E S -------------------------------*@
+        @{
+            Html.RenderAction("EditLangSkillModale", Model);
+        }
+
+        @{
+            Html.RenderAction("AddLangSkillModale", Model);
+        }
+
+        @{
+            Html.RenderAction("AddTechSkillModale", Model);
+        }
+        @{
+            Html.RenderAction("AddFoncSkillModale", Model);
+        }
+        @{
+            Html.RenderAction("AddFormationModale", Model);
+        }
+
+        @{
+            Html.RenderAction("ImportModale", Model);
+        }
+    </div>
+    <div class="tab-pane fade" id="nav-exp" role="tabpanel" aria-labelledby="nav-exp-tab">
+        <div class="form-row">
+            <div class="form-group col-md-6 font-weight-bold ">
+                @Apogee.Resources.Resources.ProExperiences <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertExperience">+</button>
+            </div>
+        </div>
+        <div>
+            @{
+                Html.RenderAction("ListExperience", Model);
+            }
+        </div>
+
+        @{
+            Html.RenderAction("UpdateExperienceView", Model);
+        }
+        @{
+            Html.RenderAction("DeleteExperienceView", Model);
+        }
+        @{ Html.RenderAction("AddExperienceModale", Model); }
+
+    </div>
+</div>
+
+<script src="~/Scripts/jquery/jquery-3.5.1.min.js"></script>
+@if (ViewBag.Message == null)
+{
+    <script>
+        $(document).ready(function () {
+            $("body").find("* input[type!='hidden'][type!='submit'][type!='checkbox'][type!='radio']").val("");
+        });
+    </script>
+}
+

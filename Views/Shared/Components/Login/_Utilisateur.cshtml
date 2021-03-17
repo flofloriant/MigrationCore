@@ -1,0 +1,11 @@
+﻿@model Apogee.Models.Utilisateur
+<div class="btn-group open">
+    <a class="dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i>@Model.Nom @Model.Prenom (@Model.Profil)</a>
+    <a data-toggle="dropdown"  href="#">
+        <span class="fa fa-caret-down" title="Toggle dropdown menu"></span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>@Html.ActionLink(Apogee.Resources.Resources.Disconnect, "Disconnect", "Login")</li>
+        <li>@Html.ActionLink(Apogee.Resources.Resources.ChangePassword, "Index", "User")</li>
+    </ul>
+</div>

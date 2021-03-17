@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\formation.DESKTOP-CIFUFI3\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\formation.DESKTOP-CIFUFI3\\.nuget\\packages"
+    ]
+  }
+}

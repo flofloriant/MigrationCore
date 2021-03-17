@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountBlocked" xml:space="preserve">
+    <value>Your account has been blocked after 3 bad passwords, time remaining : #1 minutes</value>
+  </data>
+  <data name="Alpha" xml:space="preserve">
+    <value>In alphabetical order</value>
+  </data>
+  <data name="AnnualSalary" xml:space="preserve">
+    <value>Please enter your annual salary</value>
+  </data>
+  <data name="Archive" xml:space="preserve">
+    <value>Archive</value>
+  </data>
+  <data name="BusinessInvalid" xml:space="preserve">
+    <value>Businessman invalid</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Certifications" xml:space="preserve">
+    <value>Certifications</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="Charge100" xml:space="preserve">
+    <value>100% available</value>
+  </data>
+  <data name="CoefficientsInvalid" xml:space="preserve">
+    <value>Coefficients invalid</value>
+  </data>
+  <data name="CollabForm" xml:space="preserve">
+    <value>Formation Collaborateur</value>
+  </data>
+  <data name="CollabInfo" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="CollabManag" xml:space="preserve">
+    <value>Management Collaborator </value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CollabMonit" xml:space="preserve">
+    <value>Formation monitoring</value>
+  </data>
+  <data name="Collaborator" xml:space="preserve">
+    <value>Collaborator</value>
+  </data>
+  <data name="Collaborater" xml:space="preserve">
+    <value>Collaborater</value>
+  </data>
+  <data name="CollaboraterEdit" xml:space="preserve">
+    <value>List of collaborateurs</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Copied" xml:space="preserve">
+    <value>Copied</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="ContractInvalid" xml:space="preserve">
+    <value>Contract invalid</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="Display" xml:space="preserve">
+    <value>Display</value>
+  </data>
+  <data name="Dispo" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="Dispo3mois" xml:space="preserve">
+    <value>End of mission in 3 months or less</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Your email address :</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EmailInvalide" xml:space="preserve">
+    <value>Email is not valid</value>
+  </data>
+  <data name="EmailSent" xml:space="preserve">
+    <value>An email has been sent to</value>
+  </data>
+  <data name="ErrorsLeft" xml:space="preserve">
+    <value>#1 attempt(s) left</value>
+  </data>
+  <data name="Experiences" xml:space="preserve">
+    <value>Experiences</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ExportModal" xml:space="preserve">
+    <value>Select the information you want to export as well as the file format :</value>
+  </data>
+  <data name="FalseOldPassword" xml:space="preserve">
+    <value>Invalid previous password</value>
+  </data>
+  <data name="EmailWorkInvalide" xml:space="preserve">
+    <value>Email work is not valid</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="FonctionCompetences" xml:space="preserve">
+    <value>Fonction Competences</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Forgot password</value>
+  </data>
+  <data name="ForgotPasswordParagraph" xml:space="preserve">
+    <value>You have sent a password reset request.
+Below is a temporary password that is only valid for one hour from the reset request.
+You will then have to modify it after your connection.</value>
+  </data>
+  <data name="Formations" xml:space="preserve">
+    <value>Formations</value>
+  </data>
+  <data name="Formation" xml:space="preserve">
+    <value>Formation</value>
+  </data>
+  <data name="GradeInvalid" xml:space="preserve">
+    <value>Grade invalid</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="IncorrectPsw" xml:space="preserve">
+    <value>Connection failed : Incorrect password !</value>
+  </data>
+  <data name="Indispo" xml:space="preserve">
+    <value>Unavailable on long-term mission</value>
+  </data>
+  <data name="InexistUser" xml:space="preserve">
+    <value>Connection failed : User does not exist !</value>
+  </data>
+  <data name="Initials" xml:space="preserve">
+    <value>Initials</value>
+  </data>
+  <data name="Instructions" xml:space="preserve">
+    <value>Follow the instructions provided to reset your password.</value>
+  </data>
+  <data name="InvalidCerdentials" xml:space="preserve">
+    <value>Invalid credentials</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LanguageLevel1" xml:space="preserve">
+    <value>LanguageLevel1</value>
+  </data>
+  <data name="LanguageLevel2" xml:space="preserve">
+    <value>LanguageLevel2</value>
+  </data>
+  <data name="LanguageLevel3" xml:space="preserve">
+    <value>LanguageLevel3</value>
+  </data>
+  <data name="LanguageLevel4" xml:space="preserve">
+    <value>LanguageLevel4</value>
+  </data>
+  <data name="LanguageLevel5" xml:space="preserve">
+    <value>LanguageLevel5</value>
+  </data>
+  <data name="Languages" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="LastAdded" xml:space="preserve">
+    <value>Lasts added</value>
+  </data>
+  <data name="Level1" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="Level2" xml:space="preserve">
+    <value>**</value>
+  </data>
+  <data name="Level3" xml:space="preserve">
+    <value>***</value>
+  </data>
+  <data name="Level4" xml:space="preserve">
+    <value>****</value>
+  </data>
+  <data name="Level5" xml:space="preserve">
+    <value>*****</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>Login failed</value>
+  </data>
+  <data name="NameFirstname" xml:space="preserve">
+    <value>Name Firstname</value>
+  </data>
+  <data name="NeedToResetPassword" xml:space="preserve">
+    <value>Your temporary password as expired, you need to reset it</value>
+  </data>
+  <data name="MandatoryInput" xml:space="preserve">
+    <value>Mandatory input</value>
+  </data>
+  <data name="MatriculeInvalid" xml:space="preserve">
+    <value>Matricule number exist</value>
+  </data>
+  <data name="MonthlyPayInvalid" xml:space="preserve">
+    <value>Monthly pay is invalid</value>
+  </data>
+  <data name="NewCollab" xml:space="preserve">
+    <value>New Collaborator</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Temporary password :</value>
+  </data>
+  <data name="NoResults" xml:space="preserve">
+    <value>No results</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="OtherAgency" xml:space="preserve">
+    <value>Other agencies</value>
+  </data>
+  <data name="PartTime" xml:space="preserve">
+    <value>Part-time</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PlsDate_embauche" xml:space="preserve">
+    <value>Please enter your HireDate</value>
+  </data>
+  <data name="PlsDate_naissance" xml:space="preserve">
+    <value>Please enter your date of birth</value>
+  </data>
+  <data name="Pdf" xml:space="preserve">
+    <value>Pdf</value>
+  </data>
+  <data name="PlsEmail" xml:space="preserve">
+    <value>Please enter your email address</value>
+  </data>
+  <data name="PlsPassword" xml:space="preserve">
+    <value>Please enter your password</value>
+  </data>
+  <data name="RegistrationNumberInvalid" xml:space="preserve">
+    <value>Registration number is not valid</value>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchCollab" xml:space="preserve">
+    <value>Search collaborator</value>
+  </data>
+  <data name="SearchCompet" xml:space="preserve">
+    <value>Search skills</value>
+  </data>
+  <data name="Statut2" xml:space="preserve">
+    <value>Statut2</value>
+  </data>
+  <data name="Statut3" xml:space="preserve">
+    <value>Statut3</value>
+  </data>
+  <data name="StatutInvalid" xml:space="preserve">
+    <value>Statut invalid</value>
+  </data>
+  <data name="TechnicalCompetences" xml:space="preserve">
+    <value>Technic Competences</value>
+  </data>
+  <data name="Tel_fixe" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Tel_port" xml:space="preserve">
+    <value>Phone mobil</value>
+  </data>
+  <data name="Tel_travail" xml:space="preserve">
+    <value>Phone work</value>
+  </data>
+  <data name="TitleLevel" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="TitleTechnic" xml:space="preserve">
+    <value>Technology, environment, tools</value>
+  </data>
+  <data name="TitrePerson" xml:space="preserve">
+    <value>Person to contact in case of emergency n ° </value>
+  </data>
+  <data name="SeeProfiles" xml:space="preserve">
+    <value>See profile</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome to the application</value>
+  </data>
+  <data name="WelcomeEmail" xml:space="preserve">
+    <value>Welcome to Apogee</value>
+  </data>
+  <data name="WelcomeParagraph" xml:space="preserve">
+    <value>Your account on the Apogee by Apside application has been created.
+You will find your login details below</value>
+  </data>
+  <data name="Word" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="Informations" xml:space="preserve">
+    <value>Informations</value>
+  </data>
+  <data name="Skills" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="Certification" xml:space="preserve">
+    <value>Certification</value>
+  </data>
+  <data name="ImportParagraph" xml:space="preserve">
+    <value>To import an employee, you must have the latest version of the skills file.
+Some information may not be retrieved if it is not in the correct styles in the file, please check after importing.
+Functional skills are not imported, manual entry is required.</value>
+  </data>
+  <data name="AlreadyArchived" xml:space="preserve">
+    <value>Collaborator is already archived</value>
+  </data>
+  <data name="AlreadyDelete" xml:space="preserve">
+    <value>You have already deleted the photo</value>
+  </data>
+  <data name="AlreadyUpload" xml:space="preserve">
+    <value>You have already uploaded a photo</value>
+  </data>
+  <data name="ContactAlreadyDelete" xml:space="preserve">
+    <value>The contact person is already deleted!</value>
+  </data>
+  <data name="ContactDelete" xml:space="preserve">
+    <value>The contact person has been deleted</value>
+  </data>
+  <data name="DateContractRecorded" xml:space="preserve">
+    <value>Contract end date is well recorded</value>
+  </data>
+  <data name="ErrorContratDate" xml:space="preserve">
+    <value>Incorrect contract end date</value>
+  </data>
+  <data name="ErrorDelete" xml:space="preserve">
+    <value>Problem with photo deletion</value>
+  </data>
+  <data name="ErrorTableContract" xml:space="preserve">
+    <value>Problem with employee table during contract end date update</value>
+  </data>
+  <data name="FileSaved" xml:space="preserve">
+    <value>The files have been saved</value>
+  </data>
+  <data name="FilesDelete" xml:space="preserve">
+    <value>The files have been deleted</value>
+  </data>
+  <data name="FilesModified" xml:space="preserve">
+    <value>The files have been modified</value>
+  </data>
+  <data name="FileUpload" xml:space="preserve">
+    <value>Files must be uploaded</value>
+  </data>
+  <data name="NotifyAdmin" xml:space="preserve">
+    <value>Notify the administrator !!</value>
+  </data>
+  <data name="NotSufficient" xml:space="preserve">
+    <value>your entry is not sufficient</value>
+  </data>
+  <data name="ProblemEmergency" xml:space="preserve">
+    <value>Problem with the Emergency file !!!</value>
+  </data>
+  <data name="ProblemImport" xml:space="preserve">
+    <value>Problem with photo import</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>Reason for program termination: Problem when</value>
+  </data>
+  <data name="Reason1" xml:space="preserve">
+    <value>creating a new employee</value>
+  </data>
+  <data name="Reason2" xml:space="preserve">
+    <value>reading a collaborator</value>
+  </data>
+  <data name="SeriousError" xml:space="preserve">
+    <value>Program stopped due to a serious error!</value>
+  </data>
+  <data name="ContactEmergency" xml:space="preserve">
+    <value>Person to contact in case of emergency</value>
+  </data>
+  <data name="ContactEmergencyConfirm" xml:space="preserve">
+    <value>Are you sure you want to delete the contact person?</value>
+  </data>
+  <data name="ContactEmergencyCreat" xml:space="preserve">
+    <value>Creation of a contact person</value>
+  </data>
+  <data name="ContactEmergencyModif" xml:space="preserve">
+    <value>Modification of a contact person</value>
+  </data>
+  <data name="ContactEmergencyRemove" xml:space="preserve">
+    <value>Removal of a contact person</value>
+  </data>
+  <data name="DeletingPicture" xml:space="preserve">
+    <value>Deleting the profile picture</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Error1" xml:space="preserve">
+    <value>An error occurred while processing your request.</value>
+  </data>
+  <data name="PictureCreation" xml:space="preserve">
+    <value>Profile picture creation</value>
+  </data>
+  <data name="Area1" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="Area2" xml:space="preserve">
+    <value>Assurance</value>
+  </data>
+  <data name="Area3" xml:space="preserve">
+    <value>Health</value>
+  </data>
+  <data name="PosteCreat" xml:space="preserve">
+    <value>Creating an experience</value>
+  </data>
+  <data name="ProExperiences" xml:space="preserve">
+    <value>Professional experiences</value>
+  </data>
+  <data name="Projet" xml:space="preserve">
+    <value>Projet(s)</value>
+  </data>
+  <data name="Area10" xml:space="preserve">
+    <value>Distribution</value>
+  </data>
+  <data name="Area11" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Area12" xml:space="preserve">
+    <value>Transport</value>
+  </data>
+  <data name="Area13" xml:space="preserve">
+    <value>Public sector</value>
+  </data>
+  <data name="Area14" xml:space="preserve">
+    <value>Luxury</value>
+  </data>
+  <data name="Area15" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Area4" xml:space="preserve">
+    <value>Pharmaceutical</value>
+  </data>
+  <data name="Area5" xml:space="preserve">
+    <value>Social protection</value>
+  </data>
+  <data name="Area6" xml:space="preserve">
+    <value>Industry</value>
+  </data>
+  <data name="Area7" xml:space="preserve">
+    <value>Food industry</value>
+  </data>
+  <data name="Area8" xml:space="preserve">
+    <value>Automotive</value>
+  </data>
+  <data name="Area9" xml:space="preserve">
+    <value>Aeronautics / Space / Defense</value>
+  </data>
+  <data name="DateError" xml:space="preserve">
+    <value>Mandatory date !!</value>
+  </data>
+  <data name="DateErrorC" xml:space="preserve">
+    <value>The start date cannot be greater than the end date !!</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Employee's personal information</value>
+  </data>
+  <data name="InvalidAvail" xml:space="preserve">
+    <value>Invalid availability !!</value>
+  </data>
+  <data name="ProblemPoste" xml:space="preserve">
+    <value>Problem with the Poste file !!!</value>
+  </data>
+  <data name="PosteAlreadyDelete" xml:space="preserve">
+    <value>The experiment is already deleted!</value>
+  </data>
+  <data name="PosteDelete" xml:space="preserve">
+    <value>The experiment has been deleted</value>
+  </data>
+  <data name="PosteModif" xml:space="preserve">
+    <value>Editing an experience</value>
+  </data>
+  <data name="PosteRemove" xml:space="preserve">
+    <value>Deleting an experience</value>
+  </data>
+  <data name="PosteRemoveConfirm" xml:space="preserve">
+    <value>Are you sure you want to delete the experiment?</value>
+  </data>
+</root>
