@@ -9390,19 +9390,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\formation.DESKTOP-CIFUFI3\\.nuget\\packages\\": {}
+    "C:\\Users\\formation\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\formation.DESKTOP-CIFUFI3\\Desktop\\ApogeeCORE2\\Apogee\\Apogee.csproj",
+      "projectUniqueName": "C:\\Users\\formation\\Source\\Repos\\MigrationCore\\Apogee.csproj",
       "projectName": "Apogee",
-      "projectPath": "C:\\Users\\formation.DESKTOP-CIFUFI3\\Desktop\\ApogeeCORE2\\Apogee\\Apogee.csproj",
-      "packagesPath": "C:\\Users\\formation.DESKTOP-CIFUFI3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\formation.DESKTOP-CIFUFI3\\Desktop\\ApogeeCORE2\\Apogee\\obj\\",
+      "projectPath": "C:\\Users\\formation\\Source\\Repos\\MigrationCore\\Apogee.csproj",
+      "packagesPath": "C:\\Users\\formation\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\formation\\Source\\Repos\\MigrationCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\formation.DESKTOP-CIFUFI3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\formation\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9475,7 +9475,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

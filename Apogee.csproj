@@ -11,6 +11,49 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\site.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\Site.css" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\glyphicons.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\grid.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\input-groups.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\jumbotron.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\labels.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\list-group.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\media.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\mixins.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\modals.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\navbar.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\navs.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\normalize.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\pager.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\pagination.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\panels.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\popovers.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\print.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\progress-bars.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\responsive-embed.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\responsive-utilities.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\scaffolding.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\tables.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\theme.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\thumbnails.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\tooltip.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\type.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\utilities.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\variables.less" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\wells.less" />
+    <None Include="wwwroot\lib\jqueruy-ui\jquery-ui.css" />
+    <None Include="wwwroot\lib\jqueruy-ui\jquery-ui.min.css" />
+    <None Include="wwwroot\lib\jqueruy-ui\jquery-ui.structure.css" />
+    <None Include="wwwroot\lib\jqueruy-ui\jquery-ui.structure.min.css" />
+    <None Include="wwwroot\lib\jqueruy-ui\jquery-ui.theme.css" />
+    <None Include="wwwroot\lib\jqueruy-ui\jquery-ui.theme.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.12" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.12" />

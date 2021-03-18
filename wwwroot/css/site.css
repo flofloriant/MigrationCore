@@ -1,71 +1,119 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
+.dispo {
+    background: lime;
 }
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.temps-partiel {
+    background: linear-gradient(45deg, lime 12.5%, orange 12.5%, orange 37.5%, lime 37.5%, lime 62.5%, orange 62.5%, orange 87.5%, lime 87.5%);
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+.dispo3 {
+    background: orange;
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.indispo {
+    background: red;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+.col {
+    padding: 0;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+#col-container {
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+    margin: 100px auto;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+.col {
+    width: 22%;
+    border: solid grey 2px;
+    background: white;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+
+.col:not(#colNom){
+    cursor: move;
+}
+
+.col .title,
+.colCheck .title {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* dashed */
+.col.over {
+    border: 2px dashed #000;
+}
+
+.col .title {
+    background: lightgrey;
+}
+/* Specific Columns */
+#col1 {
+    order: 1;
+    background-size: cover;
+}
+
+#col2 {
+    order: 2;
+    background-size: cover;
+}
+
+#col3 {
+    order: 3;
+    background-size: cover;
+}
+
+.collabPhoto {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+table {
+    width: 100%;
+    margin: 2em;
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+}
+
+#skill {
+    color: coral;
+    font-weight: bold;
+}
+
+caption {
+    caption-side: top;
+    padding: 15px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
 }
