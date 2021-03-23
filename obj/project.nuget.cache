@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sZ5kSDLxEsu2KbtUbqh3Nd3im/fZhVQihlTw+27kQ45jKkzUrkl/iJr3fTYCumCKXwn7I2w0/kvkEghL+QwaXA==",
+  "dgSpecHash": "MlGvNSs6zk7s9dQHlsbhjxO9ZCqxKY/LT/CJ6aY+/rJ3hifFDgtyBl6+26ULH2w0Jkj/i4fkOXMT99w/b51o4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\formation.DESKTOP-CIFUFI3\\Desktop\\ApogeeCORE2\\Apogee\\Apogee.csproj",
+  "projectFilePath": "C:\\Users\\formation.DESKTOP-CIFUFI3\\Source\\Repos\\MigrationCore\\Apogee.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\formation.DESKTOP-CIFUFI3\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\formation.DESKTOP-CIFUFI3\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
