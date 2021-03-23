@@ -29,7 +29,6 @@ namespace Apogee.Controllers
             _db = db;
             _logger = logger;
         }
-
         
 
         /// <summary>

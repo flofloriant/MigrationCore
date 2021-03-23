@@ -177,3 +177,4 @@ C:\Users\formation.DESKTOP-CIFUFI3\Desktop\ApogeeCORE2\Apogee\obj\Debug\netcorea
 C:\Users\formation.DESKTOP-CIFUFI3\Desktop\ApogeeCORE2\Apogee\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\formation.DESKTOP-CIFUFI3\Desktop\ApogeeCORE2\Apogee\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\formation.DESKTOP-CIFUFI3\Desktop\ApogeeCORE2\Apogee\obj\Debug\netcoreapp3.1\Razor\Views\Home\AccessDb.cshtml.g.cs
+C:\Users\formation.DESKTOP-CIFUFI3\Desktop\ApogeeCORE2\Apogee\obj\Debug\netcoreapp3.1\Razor\Views\Collaborator\NewCollab.cshtml.g.cs

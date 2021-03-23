@@ -7,22 +7,80 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Web;
 
+namespace Apogee.SaveAs
+{
+    public static class FileSaveExtension
+    {
+        public static void SaveAs(this IFormFile formFile, string filePath)
+        {
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                formFile.CopyTo(stream);
+            }
+        }
+    }
+}
+namespace Apogee.Web.Helpers
+{
+    public static class ControllerExtensions
+    {
+        public static async Task<string> RenderViewAsync<TModel>(this Controller controller, string viewName, TModel model, bool partial = false)
+        {
+            if (string.IsNullOrEmpty(viewName))
+            {
+                viewName = controller.ControllerContext.ActionDescriptor.ActionName;
+            }
+
+            controller.ViewData.Model = model;
+
+            using (var writer = new StringWriter())
+            {
+                IViewEngine viewEngine = controller.HttpContext.RequestServices.GetService(typeof(ICompositeViewEngine)) as ICompositeViewEngine;
+                ViewEngineResult viewResult = viewEngine.FindView(controller.ControllerContext, viewName, !partial);
+
+                if (viewResult.Success == false)
+                {
+                    return $"A view with the name {viewName} could not be found";
+                }
+
+                ViewContext viewContext = new ViewContext(
+                    controller.ControllerContext,
+                    viewResult.View,
+                    controller.ViewData,
+                    controller.TempData,
+                    writer,
+                    new HtmlHelperOptions()
+                );
+
+                await viewResult.View.RenderAsync(viewContext);
+
+                return writer.GetStringBuilder().ToString();
+            }
+        }
+    }
+}
 
 namespace Apogee.Controllers
 {
+    using Apogee.SaveAs;
+    using Microsoft.AspNetCore.Mvc.Razor;
+    using Microsoft.AspNetCore.Mvc.ViewEngines;
+
     [Authorize]
     public class CollaboratorController : Controller
     {
-
-        private IDal dal;
+        private readonly IDal dal;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly ApplicationDbContext _db;
 
@@ -30,7 +88,9 @@ namespace Apogee.Controllers
         {
             _db = db;
             _webHostEnvironment = webHostEnvironment;
+            
         }
+        
 
         #region NewCollaborateur en mode Get
         /// <summary>
@@ -295,7 +355,7 @@ namespace Apogee.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [ValidateAntiForgeryToken]
-          
+
         [HttpPost]
         public ActionResult EditCollab(Collaborateur model)
         {
@@ -558,7 +618,7 @@ namespace Apogee.Controllers
         {
             string pays = dal.PaysAgence(model.FK_id_agence);
             List<Contrat> resultatsContrat = dal.ObtientTousLesContrats(pays);
-            return Json(new { resultatsContrat }/*, JsonRequestBehavior.AllowGet*/);
+            return Json(new { resultatsContrat } /*, JsonRequestBehavior.AllowGet*/);
         }
         /// <summary>
         /// On met la liste des statuts à jour si agence a changé et il y a plusieurs pays
@@ -694,7 +754,7 @@ namespace Apogee.Controllers
         /// <returns></returns>
 
         [ValidateAntiForgeryToken]
-          
+
         [HttpPost]
         public ActionResult PhotoVue(Photo model)
         {
@@ -722,12 +782,15 @@ namespace Apogee.Controllers
                 {
                     try
                     {
-                        if (!Directory.Exists(Server.MapPath("~/Images/docs")))
-                            Directory.CreateDirectory(Server.MapPath("~/Images/docs"));
-                        path1 = Path.Combine(Server.MapPath("~/Images/docs"), Path.GetFileName(model.Id + model.Fic_autorisation_photo.FileName));
-                        model.Fic_autorisation_photo.SaveAs(path1);
+                        string contentRootPath = _webHostEnvironment.ContentRootPath;
+                        string path = Path.Combine(contentRootPath, "Images\\docs");
+                        //Vérifie si un fichier Images\docs existe, si non le créer
+                        if (!Directory.Exists(path))
+                            Directory.CreateDirectory(path);
+                        path1 = Path.Combine(path, Path.GetFileName(model.Id + model.Fic_autorisation_photo.FileName));
+                        model.Fic_autorisation_photo.SaveAs(path1);  
                         path1 = "/Images/docs/" + Path.GetFileName(model.Id + model.Fic_autorisation_photo.FileName);
-                        path2 = Path.Combine(Server.MapPath("~/Images/docs"), Path.GetFileName(model.Id + model.Fic_photo.FileName));
+                        path2 = Path.Combine(path, Path.GetFileName(model.Id + model.Fic_photo.FileName));
                         model.Fic_photo.SaveAs(path2);
                         path2 = "/Images/docs/" + Path.GetFileName(model.Id + model.Fic_photo.FileName);
                         collaborateurPhoto.Fic_autorisation_photo = path1;
@@ -755,7 +818,7 @@ namespace Apogee.Controllers
                     }
                 }
             }
-            return Json(ajaxListViewModel, JsonRequestBehavior.AllowGet);
+            return Json(ajaxListViewModel/*, JsonRequestBehavior.AllowGet*/);
         }
         #endregion
         #region PhotoVue Suppression en mode Post
@@ -765,7 +828,7 @@ namespace Apogee.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [ValidateAntiForgeryToken]
-          
+
         [HttpPost]
         public ActionResult PhotoVueDelete(Photo model)
         {
@@ -809,13 +872,15 @@ namespace Apogee.Controllers
         }
         public string RecupererChemin(string model)
         {
+            string contentRootPath = _webHostEnvironment.ContentRootPath;
+            string path = Path.Combine(contentRootPath, "Images\\docs");
             var path1 = model.Trim();
             string str = "";
             for (int i = 13; i <= path1.Length - 1; i++)
             {
                 str += path1[i];
             }
-            return Path.Combine(Server.MapPath("~/Images/docs/") + str);
+            return Path.Combine(path + str);
         }
         #endregion
         #endregion
@@ -857,7 +922,7 @@ namespace Apogee.Controllers
         #endregion
         #region UrgenceVue en mode Post
         [ValidateAntiForgeryToken]
-          
+
         [HttpPost]
         public ActionResult UrgenceVue(Urgence detail)
         {
@@ -917,7 +982,7 @@ namespace Apogee.Controllers
         }
         #endregion
         [ValidateAntiForgeryToken]
-          
+
         [HttpPost]
         public ActionResult UrgenceUpdateVue(Urgence detail)
         {
@@ -956,7 +1021,7 @@ namespace Apogee.Controllers
         }
 
 
-          
+
         [HttpPost]
         public ActionResult UrgenceDeleteVue(Urgence detail)
         {
@@ -993,10 +1058,8 @@ namespace Apogee.Controllers
             ViewData.Model = model;
             using (var sw = new StringWriter())
             {
-                var viewResult = ViewEngines.Engines.FindPartialView(ControllerContext,
-                                                                         viewName);
-                var viewContext = new ViewContext(ControllerContext, viewResult.View,
-                                             ViewData, TempData, sw);
+                var viewResult = ViewEngines.Engines.FindPartialView(ControllerContext,viewName);
+                var viewContext = new ViewContext(ControllerContext, viewResult.View,ViewData, TempData, sw);
                 viewResult.View.Render(viewContext, sw);
                 viewResult.ViewEngine.ReleaseView(ControllerContext, viewResult.View);
                 return sw.GetStringBuilder().ToString();
@@ -1135,7 +1198,9 @@ namespace Apogee.Controllers
                 if (model.UploadFile != null && model.UploadFile.ContentLength > 0)
                     try
                     {
-                        path = Path.Combine(Server.MapPath("~/Images"),
+                        string contentRootPath = _webHostEnvironment.ContentRootPath;
+                        path = Path.Combine(contentRootPath, "Images");
+                        path = Path.Combine(path,
                                                    Path.GetFileName(model.UploadFile.FileName));
                         model.UploadFile.SaveAs(path);
                         ViewBag.Message = "Le fichier a été télécharger avec succès ! ";
@@ -1247,10 +1312,12 @@ namespace Apogee.Controllers
             if (model.FK_id_collaborateur != 0)
             {
                 string path = string.Empty;
-                if (model.UploadFile != null && model.UploadFile.ContentLength > 0)
+                if (model.UploadFile != null && model.UploadFile.Length > 0)
                     try
                     {
-                        path = Path.Combine(Server.MapPath("~/Images"),
+                        string contentRootPath = _webHostEnvironment.ContentRootPath;
+                        path = Path.Combine(contentRootPath, "Images");
+                        path = Path.Combine(path,
                                                    Path.GetFileName(model.UploadFile.FileName));
                         model.UploadFile.SaveAs(path);
                         ViewBag.Message = "Le fichier a été télécharger avec succès ! ";
@@ -1405,7 +1472,7 @@ namespace Apogee.Controllers
         /// <param name="detail"></param>
         /// <returns></returns>
         [ValidateAntiForgeryToken]
-          
+
         [HttpPost]
         public ActionResult ExperienceVue(Experiences detail)
         {
@@ -1443,11 +1510,13 @@ namespace Apogee.Controllers
                 string path1 = string.Empty;
                 try
                 {
-                    if (!Directory.Exists(Server.MapPath("~/Images/docs")))
-                        Directory.CreateDirectory(Server.MapPath("~/Images/docs"));
+                    string contentRootPath = _webHostEnvironment.ContentRootPath;
+                    string path = Path.Combine(contentRootPath, "Images\\docs");
+                    if (!Directory.Exists(path))
+                        Directory.CreateDirectory(path);
                     int id = dal.DernierIdPoste();
                     id++;
-                    path1 = Path.Combine(Server.MapPath("~/Images/docs"), Path.GetFileName(id + detail.Logo.FileName));
+                    path1 = Path.Combine(path, Path.GetFileName(id + detail.Logo.FileName));
                     detail.Logo.SaveAs(path1);
                     path1 = "/Images/docs/" + Path.GetFileName(id + detail.Logo.FileName);
                     detail.LogoClient = path1;
@@ -1587,7 +1656,7 @@ namespace Apogee.Controllers
         /// <param name="detail"></param>
         /// <returns></returns>
         [ValidateAntiForgeryToken]
-          
+
         [HttpPost]
         public ActionResult ExperienceUpdateVue(Experiences detail)
         {
@@ -1630,13 +1699,15 @@ namespace Apogee.Controllers
                 string path1 = string.Empty;
                 try
                 {
-                    if (!Directory.Exists(Server.MapPath("~/Images/docs")))
-                        Directory.CreateDirectory(Server.MapPath("~/Images/docs"));
+                    string contentRootPath = _webHostEnvironment.ContentRootPath;
+                    string path = Path.Combine(contentRootPath, "Images\\docs");
+                    if (!Directory.Exists(path))
+                        Directory.CreateDirectory(path);
                     if (posteAvant.Logo != null)
                     {
                         SupprimerChemin(posteAvant.Logo);
                     }
-                    path1 = Path.Combine(Server.MapPath("~/Images/docs"), Path.GetFileName(detail.Id + detail.Logo.FileName));
+                    path1 = Path.Combine(path, Path.GetFileName(detail.Id + detail.Logo.FileName));
                     detail.Logo.SaveAs(path1);
                     path1 = "/Images/docs/" + Path.GetFileName(detail.Id + detail.Logo.FileName);
                     detail.LogoClient = path1;
@@ -1959,7 +2030,7 @@ namespace Apogee.Controllers
             return PartialView("_ArchiveModal", collab);
         }
         [ValidateAntiForgeryToken]
-          
+
         [HttpPost]
         public ActionResult ArchiveCollab(Collaborateur model)
         {
@@ -2063,16 +2134,18 @@ namespace Apogee.Controllers
             }
 
             // creation dossier si non existant
-            if (!Directory.Exists(Server.MapPath("~/Resources/docs")))
-                Directory.CreateDirectory(Server.MapPath("~/Resources/docs"));
+            string contentRootPath = _webHostEnvironment.ContentRootPath;
+            string path = Path.Combine(contentRootPath, "Ressources\\docs");
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
 
             // Sauvegarde du fichier
-            document.SaveAs(Path.Combine(Server.MapPath("~/Resources/docs"), "export.docx"));
+            document.SaveAs(Path.Combine(path, "export.docx"));
 
             // Si l'utilisateur veut un pdf, on exporte le doc en pdf
             if (target == 2)
             {
-                document.ExportAsFixedFormat(Path.Combine(Server.MapPath("~/Resources/docs"), "export.pdf"), WdExportFormat.wdExportFormatPDF);
+                document.ExportAsFixedFormat(Path.Combine(path, "export.pdf"), WdExportFormat.wdExportFormatPDF);
                 filename = "export.pdf";
                 isPdf = true;
             }
@@ -2084,15 +2157,15 @@ namespace Apogee.Controllers
             app.Quit();
 
             // Récupération du document en byte[]
-            byte[] fileBytes = System.IO.File.ReadAllBytes(Path.Combine(Server.MapPath("~/Resources/docs"), filename));
+            byte[] fileBytes = System.IO.File.ReadAllBytes(Path.Combine(path, filename));
             // écriture du fichier de retour
             var file = File(
                 fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
 
             // Suppression des fichiers
-            System.IO.File.Delete(Path.Combine(Server.MapPath("~/Resources/docs"), "export.docx"));
+            System.IO.File.Delete(Path.Combine(path, "export.docx"));
             if (isPdf)
-                System.IO.File.Delete(Path.Combine(Server.MapPath("~/Resources/docs"), "export.pdf"));
+                System.IO.File.Delete(Path.Combine(path, "export.pdf"));
 
             return file;
         }
@@ -2112,14 +2185,16 @@ namespace Apogee.Controllers
                 try
                 {
                     // creation dossier si non existant
-                    if (!Directory.Exists(Server.MapPath("~/Resources/docs")))
-                        Directory.CreateDirectory(Server.MapPath("~/Resources/docs"));
+                    string contentRootPath = _webHostEnvironment.ContentRootPath;
+                    path = Path.Combine(contentRootPath, "Ressources\\docs");
+                    if (!Directory.Exists(path))
+                        Directory.CreateDirectory(path);
 
-                    path = Path.Combine(Server.MapPath("~/Resources/docs"),
+                    path = Path.Combine(path,
                                                 Path.GetFileName(file.FileName));
                     file.SaveAs(path);
                     DocumentHelper.genereCollab(model, dal, path);
-                    System.IO.File.Delete(Path.Combine(Server.MapPath("~/Resources/docs"), file.FileName));
+                    System.IO.File.Delete(Path.Combine(path, file.FileName));
                     ChargerListLangues(model);
                     ChargerListTechniques(model);
                     ChargerListEtudes(model);
