@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\formation.DESKTOP-CIFUFI3\\Source\\Repos\\MigrationCore\\Apogee.csproj": {}
+    "C:\\Users\\formation.DESKTOP-CIFUFI3\\source\\repos\\MigrationCore\\Apogee.csproj": {}
   },
   "projects": {
-    "C:\\Users\\formation.DESKTOP-CIFUFI3\\Source\\Repos\\MigrationCore\\Apogee.csproj": {
+    "C:\\Users\\formation.DESKTOP-CIFUFI3\\source\\repos\\MigrationCore\\Apogee.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\formation.DESKTOP-CIFUFI3\\Source\\Repos\\MigrationCore\\Apogee.csproj",
+        "projectUniqueName": "C:\\Users\\formation.DESKTOP-CIFUFI3\\source\\repos\\MigrationCore\\Apogee.csproj",
         "projectName": "Apogee",
-        "projectPath": "C:\\Users\\formation.DESKTOP-CIFUFI3\\Source\\Repos\\MigrationCore\\Apogee.csproj",
+        "projectPath": "C:\\Users\\formation.DESKTOP-CIFUFI3\\source\\repos\\MigrationCore\\Apogee.csproj",
         "packagesPath": "C:\\Users\\formation.DESKTOP-CIFUFI3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\formation.DESKTOP-CIFUFI3\\Source\\Repos\\MigrationCore\\obj\\",
+        "outputPath": "C:\\Users\\formation.DESKTOP-CIFUFI3\\source\\repos\\MigrationCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\formation.DESKTOP-CIFUFI3\\AppData\\Roaming\\NuGet\\NuGet.Config",
