@@ -31,45 +31,6 @@ namespace Apogee.SaveAs
         }
     }
 }
-namespace Apogee.Web.Helpers
-{
-    public static class ControllerExtensions
-    {
-        public static async Task<string> RenderViewAsync<TModel>(this Controller controller, string viewName, TModel model, bool partial = false)
-        {
-            if (string.IsNullOrEmpty(viewName))
-            {
-                viewName = controller.ControllerContext.ActionDescriptor.ActionName;
-            }
-
-            controller.ViewData.Model = model;
-
-            using (var writer = new StringWriter())
-            {
-                IViewEngine viewEngine = controller.HttpContext.RequestServices.GetService(typeof(ICompositeViewEngine)) as ICompositeViewEngine;
-                ViewEngineResult viewResult = viewEngine.FindView(controller.ControllerContext, viewName, !partial);
-
-                if (viewResult.Success == false)
-                {
-                    return $"A view with the name {viewName} could not be found";
-                }
-
-                ViewContext viewContext = new ViewContext(
-                    controller.ControllerContext,
-                    viewResult.View,
-                    controller.ViewData,
-                    controller.TempData,
-                    writer,
-                    new HtmlHelperOptions()
-                );
-
-                await viewResult.View.RenderAsync(viewContext);
-
-                return writer.GetStringBuilder().ToString();
-            }
-        }
-    }
-}
 
 namespace Apogee.Controllers
 {
@@ -83,14 +44,15 @@ namespace Apogee.Controllers
         private readonly IDal dal;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly ApplicationDbContext _db;
+        private ICompositeViewEngine _viewEngine;
 
-        public CollaboratorController(ApplicationDbContext db, IWebHostEnvironment webHostEnvironment)
+        public CollaboratorController(ApplicationDbContext db, ICompositeViewEngine viewEngine, IWebHostEnvironment webHostEnvironment)
         {
             _db = db;
             _webHostEnvironment = webHostEnvironment;
-            
+            _viewEngine = viewEngine;
         }
-        
+
 
         #region NewCollaborateur en mode Get
         /// <summary>
@@ -1053,7 +1015,7 @@ namespace Apogee.Controllers
         #endregion
         #endregion
         #region Fonctions communs pour modale
-        public string RenderRazorViewToString(string viewName, object model)
+        /*public string RenderRazorViewToString(string viewName, object model)
         {
             ViewData.Model = model;
             using (var sw = new StringWriter())
@@ -1064,7 +1026,30 @@ namespace Apogee.Controllers
                 viewResult.ViewEngine.ReleaseView(ControllerContext, viewResult.View);
                 return sw.GetStringBuilder().ToString();
             }
+        }*/
+        public async Task<string> RenderRazorViewToString(string viewName, object model)
+        {
+            ViewData.Model = model;
+            using (var sw = new StringWriter())
+            {
+                ViewEngineResult viewResult =
+                     _viewEngine.FindView(ControllerContext, viewName, false);
+
+                ViewContext viewContext = new ViewContext(
+                    ControllerContext,
+                    viewResult.View,
+                    ViewData,
+                    TempData,
+                    sw,
+                    new HtmlHelperOptions()
+                );
+
+                await viewResult.View.RenderAsync(viewContext);
+                /*viewResult.ViewEngine.ReleaseView(ControllerContext, viewResult.View);*/
+                return sw.GetStringBuilder().ToString();
+            }
         }
+        /*-------------------------------------------------------------------*/
         public void ChargerTousLesModals(Collaborateur model)
         {
             Urgence urgenceInput = new Urgence();
@@ -1195,7 +1180,7 @@ namespace Apogee.Controllers
             if (model.FK_id_collaborateur != 0)
             {
                 string path = string.Empty;
-                if (model.UploadFile != null && model.UploadFile.ContentLength > 0)
+                if (model.UploadFile != null && model.UploadFile.Length > 0)
                     try
                     {
                         string contentRootPath = _webHostEnvironment.ContentRootPath;
